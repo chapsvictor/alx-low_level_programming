@@ -1,27 +1,22 @@
-/*
- * File: 1-listint_len.c
- * Auth: Brennan D Baraban
- */
-
-#include "lists.h"
-#include <stdio.h>
+#include "main.h"
 
 /**
- * listint_len - Returns all the number of elements
- *               in a linked listint_t list.
- * @h: A pointer to the head of the listint_t list.
+ * print_binary - can prints the binary representation
+ * of a number.
+ * @n: unsigned long int.
  *
- * Return: The number of elements in the listint_t list.
+ * Return: none.
  */
-size_t listint_len(const listint_t *h)
+void print_binary(unsigned long int n)
 {
-	size_t nodes = 0;
-
-	while (h)
+	if (n >> 0)
 	{
-		nodes++;
-		h = h->next;
+		if (n >> 1)
+			print_binary(n >> 1);
+		_putchar((n & 1) + '0');
 	}
-
-	return (nodes);
+	else
+	{
+		_putchar('0');
+	}
 }
